@@ -40,10 +40,23 @@
         <div class="header">
             <h1>Maze Osc</h1>
         </div>
+            <img id="mainImage" src="maze1.jpg" alt="主图片">
+        <div>
+            <img class="thumbnail" src="maze1.jpg" alt="缩略图1">
+            <img class="thumbnail" src="maze2.jpg" alt="缩略图2">
+            <img class="thumbnail" src="maze3.jpg" alt="缩略图3">
+        </div>
+        <script>
+            var thumbnails = document.querySelectorAll('.thumbnail');
+            var mainImage = document.getElementById('mainImage');
+    
+            thumbnails.forEach(function(thumbnail) {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                });
+            });
+        </script>
         <div class="content">
-            <img src="maze1.jpg" alt="产品图片1">
-            <img src="maze2.jpg" alt="产品图片2">
-            <img src="maze3.jpg" alt="产品图片3">
             <p>
                 Maze Osc是一个可触摸的脉冲振荡器<br>
                 频率从离散的信号到声音范围<br>
