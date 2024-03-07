@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ear 模块合成器</title>
+    <title>maze</title>
     <style>
         @font-face {
             font-family: 'MedievalSharp-BoldOblique';
@@ -22,60 +22,60 @@
         }
         .content {
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .product {
-            border: 1px solid #000;
-            padding: 20px;
-            width: 23%;
-            box-sizing: border-box;
             text-align: center;
         }
-        .product a {
-            color: black;
-            text-decoration: none;
-        }
-        .product img {
+        .content img {
             width: 100%;
             height: auto;
+            margin-bottom: 20px;
+        }
+        .content a {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Ear Modular</h1>
+            <h1>Maze Osc</h1>
         </div>
+            <img id="mainImage" src="maze1.jpg" alt="主图片">
+        <div>
+            <img class="thumbnail" src="maze1.jpg" alt="缩略图1">
+            <img class="thumbnail" src="maze2.jpg" alt="缩略图2">
+            <img class="thumbnail" src="maze3.jpg" alt="缩略图3">
+        </div>
+        <script>
+            var thumbnails = document.querySelectorAll('.thumbnail');
+            var mainImage = document.getElementById('mainImage');
+    
+            thumbnails.forEach(function(thumbnail) {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                });
+            });
+        </script>
         <div class="content">
-            <div class="product">
-                <a href="maze.html">
-                    <img src="maze1.jpg" alt="Maze">
-                    <h2>Maze</h2>
-                    <p>可触摸的脉冲振荡器</p>
-                    <p>touchable pulse oscillator</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="hadouken.html">
-                    <img src="hadouken1.jpg" alt="Hadouken">
-                    <h2>Hadouken</h2>
-                    <p>coming soon...</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="boxing.html">
-                    <img src="boxing.jpg" alt="Boxing">
-                    <h2>Boxing</h2>
-                    <p>coming soon...</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="trot.html">
-                    <h2>Trot</h2>
-                    <p>coming soon...</p>
-                </a>
-            </div>
+            <p>
+                Maze Osc是一个可触摸的脉冲振荡器<br>
+                频率从离散的信号到声音范围<br>
+                速度可cv控制<br>
+                两组振荡器各有两个相位不同的输出<br>
+                两组振荡器可通过触摸面板图案相互调制<br>
+                脉冲信号不是等间隔排列是它的特色<br>
+                Maze Osc不支持v/oct<br>
+                <br>
+                <br>
+                Frequency range: From discrete signals to audio frequencies.<br>
+                Speed is CV-controllable.<br>
+                Two oscillators, each with two outputs of different phases.<br>
+                The touch panel pattern can be used to modulate the two oscillator groups.<br>
+                Its distinctive feature is that the pulse signals are not evenly spaced.<br>
+                It does not support V/Oct.
+                <br>
+                <br></p>
+            <a href="https://b23.tv/nbM2edZ">点击这里查看产品视频介绍 Click here for video introduction -->【Maze Osc 模块合成器演示-哔哩哔哩】</a>
         </div>
         <div class="footer">
             <p>版权所有 hhiix &copy; 2024</p>
