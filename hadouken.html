@@ -7,6 +7,9 @@
             font-family: 'MedievalSharp-BoldOblique';
             src: url('MedievalSharp-BoldOblique.ttf');
         }
+        p {
+            font-size: 18px;
+        }
         body {
             font-family: 'MedievalSharp-BoldOblique', Arial, sans-serif;
             background-color: #ffffff;
@@ -24,10 +27,35 @@
             padding: 20px;
             text-align: center;
         }
-        .content img {
+        #mainImage {
             width: 100%;
             height: auto;
             margin-bottom: 20px;
+        }
+        #mainImage {
+            width: 100%;
+            height: 70vh;  /* 设置主图片的高度为视口高度的 70% */
+            object-fit: contain;  /* 保持图片的宽高比 */
+            margin-bottom: 20px;
+        }
+        .thumbnails {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            width: 10%;
+            height: 10vh;
+            object-fit: contain;
+            height: auto;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .thumbnail:hover {
+            opacity: 0.5;  /* 鼠标悬浮时设置为半透明 */
+        }
+        a:hover {
+            opacity: 0.5;  /* 鼠标悬浮时设置为半透明 */
         }
         .content a {
             color: black;
@@ -40,11 +68,53 @@
         <div class="header">
             <h1>Hadouken</h1>
         </div>
+        <img id="mainImage" src="maze1.jpg" alt="主图片">
+        <div class="thumbnails">
+            <img class="thumbnail" src="hadouken2.jpg" alt="缩略图1">
+            <img class="thumbnail" src="hadouken3.jpg" alt="缩略图2">
+            <img class="thumbnail" src="hadouken4.jpg" alt="缩略图3">
+        </div>
+        <script>
+            var thumbnails = document.querySelectorAll('.thumbnail');
+            var mainImage = document.getElementById('mainImage');
+    
+            thumbnails.forEach(function(thumbnail) {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                });
+            });
+        </script>
         <div class="content">
-            <img src="hadouken1.jpg" alt="hadouken1">
-            <img src="hadouken2.jpg" alt="hadouken2">
-            <p>coming soon...</p>
-            <a href="video.mp4"></a>
+            <p>
+                S&H In S&H trig S&H out
+                <br>
+                S&H In 8、S&H Trig 9、$&H Out 10是一组采样保持电路。
+                S&H In 8输入需要被采样的信号,S&H Trig 9输入Trig信号即对S&H In 8的输入进行采样,采样结果会保持住直到下一个Trig信号触发新的采样,结果将在S&H Out 10输出。
+                在S&H In 8没有插入线时,S&H Trig 9的Trig信号会对Noise Out 2的噪音进行采样,从而得到一个近乎随机的采样结果。
+                在S&H Trig 9没有插入线时,可通过按压按钮5来触发采样保持功能。
+                <br>
+                <br>
+                <br>
+                Noise Trig & Noise Out
+                <br>
+                Noise Trig 1和Noise Out 2是噪音生成器部分,在没有任何输入的情况下Noise Out持续输出一个噪音,
+                这是齐纳管击穿后的声音被放大很多倍以后的结果,如果Noise Trig插孔插入一根线,齐纳管就停止击穿状态,
+                这时候给一个信号,可以是Trig、方波或者其他任意信号,只需要它高于3.3v它就会再次击穿齐纳管,不断往复,改变Noise Out的输出效果。
+                <br>
+                <br>
+                <br>
+                Offset Out
+                <br>
+                旋钮3改变Ofset Out 4的输出电压值,当按下按钮5.Ofset Out 4会根据旋钮的位置输出电压,放开按钮,输出终止。
+                <br>
+                <br>
+                <br>
+                Aux in & out
+                <br>
+                Aux In 6和Aux Out 7是一组包络不可调的Vca,由按钮5触发。Aux In 6可以是音频输入也可以是其他信号输入,按压按钮5,Aux In6的输入会在添加一个包络控制后从Aux Out 7输出。
+                Noise Out2的噪音输出在Aux In 6没有插入线时添加到AuxIn 6。
+                就是说可以直接通过按压按钮5,控制噪音在Aux Out 7输出。
+            </p>
         </div>
         <div class="footer">
             <p><span class="transparent">Copyright Ear &copy; 2024</span></p>
