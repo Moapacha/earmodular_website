@@ -61,6 +61,12 @@
             color: black;
             text-decoration: none;
         }
+        .large-text {
+            font-size: 24px;  /* 大字体 */
+        }
+        .small-text {
+            font-size: 16px;  /* 小字体 */
+        }
     </style>
 </head>
 <body>
@@ -85,40 +91,38 @@
             });
         </script>
         <div class="content">
-            <p>
-                S&H In S&H trig S&H out
+            <p class="large-text"> S&H In S&H trig S&H out 
                 <br>
-                S&H In 8、S&H Trig 9、$&H Out 10是一组采样保持电路。
-                <br>
-                <br>
+                <br></p>
+            <p class="small-text"> S&H In 8、S&H Trig 9、$&H Out 10是一组采样保持电路。
                 S&H In 8输入需要被采样的信号,S&H Trig 9输入Trig信号即对S&H In 8的输入进行采样,采样结果会保持住直到下一个Trig信号触发新的采样,结果将在S&H Out 10输出。
                 在S&H In 8没有插入线时,S&H Trig 9的Trig信号会对Noise Out 2的噪音进行采样,从而得到一个近乎随机的采样结果。
                 在S&H Trig 9没有插入线时,可通过按压按钮5来触发采样保持功能。
                 <br>
                 <br>
+                <br></p>
+            <p class="large-text"> Noise Trig & Noise Out
                 <br>
-                Noise Trig & Noise Out
-                <br>
-                <br>
-                Noise Trig 1和Noise Out 2是噪音生成器部分,在没有任何输入的情况下Noise Out持续输出一个噪音,
+                <br></p>
+            <p class="small-text"> Noise Trig 1和Noise Out 2是噪音生成器部分,在没有任何输入的情况下Noise Out持续输出一个噪音,
                 这是齐纳管击穿后的声音被放大很多倍以后的结果,如果Noise Trig插孔插入一根线,齐纳管就停止击穿状态,
                 这时候给一个信号,可以是Trig、方波或者其他任意信号,只需要它高于3.3v它就会再次击穿齐纳管,不断往复,改变Noise Out的输出效果。
                 <br>
                 <br>
+                <br></p>
+            <p class="large-text"> Offset Out
                 <br>
-                Offset Out
-                <br>
-                <br>
-                旋钮3改变Ofset Out 4的输出电压值,当按下按钮5.Ofset Out 4会根据旋钮的位置输出电压,放开按钮,输出终止。
-                <br>
-                <br>
-                <br>
-                Aux in & out
+                <br></p>
+            <p class="small-text"> 旋钮3改变Ofset Out 4的输出电压值,当按下按钮5.Ofset Out 4会根据旋钮的位置输出电压,放开按钮,输出终止。
                 <br>
                 <br>
-                Aux In 6和Aux Out 7是一组包络不可调的Vca,由按钮5触发。Aux In 6可以是音频输入也可以是其他信号输入,按压按钮5,Aux In6的输入会在添加一个包络控制后从Aux Out 7输出。
+                <br></p>
+            <p class="large-text"> Aux in & out
+                <br>
+                <br></p>
+            <p class="small-text"> Aux In 6和Aux Out 7是一组包络不可调的Vca,由按钮5触发。Aux In 6可以是音频输入也可以是其他信号输入,按压按钮5,Aux In6的输入会在添加一个包络控制后从Aux Out 7输出。
                 Noise Out2的噪音输出在Aux In 6没有插入线时添加到AuxIn 6。
-                就是说可以直接通过按压按钮5,控制噪音在Aux Out 7输出。
+                就是说可以直接通过按压按钮5,控制噪音在Aux Out 7输出。</p>
             </p>
         </div>
         <div class="footer">
